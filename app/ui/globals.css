@@ -1,0 +1,28 @@
+html,
+body {
+  margin: 0;
+}
+
+.auth-section {
+  background-color: #000938;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  background-color: #00031c;
+  width: 85%;
+  padding: 4rem 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 30px;
+  max-width: 450px;
+}
+
