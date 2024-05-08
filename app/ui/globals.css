@@ -1,28 +1,48 @@
+:root {
+  ---darkBlue: #00031c;
+  --mediumBlue: #000938;
+  --lightGray: rgba(0, 0, 0, 0.22);
+  --primary: #f35151;
+  --secondary: #9a00e2;
+  --font: var(--font-josefin-sans);
+}
+
 html,
 body {
   margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font);
 }
 
 .auth-section {
-  background-color: #000938;
+  background-color: var(--mediumBlue);
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .auth-container {
-  background-color: #00031c;
+  background-color: var(---darkBlue);
   width: 85%;
-  padding: 4rem 0;
+  max-width: 470px;
   height: auto;
+  padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   border-radius: 30px;
-  max-width: 450px;
+  margin: 2rem 0;
 }
 
+@media screen and (max-width: 720px) {
+  .auth-container {
+    border-radius: 60px;
+  }
+}

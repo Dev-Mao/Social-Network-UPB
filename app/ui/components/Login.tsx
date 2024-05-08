@@ -1,18 +1,16 @@
 "use client";
 import React from "react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import styles from "./Login.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-
-  const userInput = useRef(null);
-  const passwordInput = useRef(null);
+  const router = useRouter()
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-
     setUser("");
     setPassword("");
   };
@@ -25,7 +23,6 @@ export default function Login() {
           placeholder="ID o Correo institucional"
           value={user}
           onChange={(e) => setUser(e.target.value)}
-          ref={userInput}
           required
         />
         <input
@@ -33,13 +30,14 @@ export default function Login() {
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          ref={passwordInput}
           required
         />
         <button type="submit">Iniciar Sesión</button>
       </form>
       <span>¿Aún no tienes una cuenta?</span>
-      <button>Registrarme</button>
+      <button type="button" onClick={() => router.push("/registro")}>
+        Registrarme
+      </button>
     </div>
   );
 }
