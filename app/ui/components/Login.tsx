@@ -10,7 +10,7 @@ export default function Login() {
   const userInput = useRef(null);
   const passwordInput = useRef(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     setUser("");

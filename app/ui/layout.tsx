@@ -1,12 +1,6 @@
 import Image from "next/image";
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-  title: string;
-  description: string;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <section className="auth-section">
       <div className="auth-container">
