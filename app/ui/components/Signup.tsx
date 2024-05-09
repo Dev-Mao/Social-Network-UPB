@@ -18,16 +18,18 @@ export default function Login() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleChange = (event: { target: { name: any; value: any; }; }) => {
+  const handleChange = (event: { target: { name: any; value: any } }) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    setError("")
+    setError("");
     if (formData.password !== formData.confirmedPassword) {
       setError("Las contraseñas no coinciden");
+    } else {
+      router.push("/home/general");
     }
   };
 

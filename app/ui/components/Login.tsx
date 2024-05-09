@@ -6,11 +6,14 @@ import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const router = useRouter()
+  const [password, setPassword] = useState("null");
+  const router = useRouter();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    if (user.length > 0 && password.length > 0) {
+      router.push("/home/general");
+    }
     setUser("");
     setPassword("");
   };
@@ -32,7 +35,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit">Iniciar sesión</button>
       </form>
       <span>¿Aún no tienes una cuenta?</span>
       <button type="button" onClick={() => router.push("/registro")}>

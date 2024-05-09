@@ -5,32 +5,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
+import { MenuItem } from "@/app/types";
 
-export default function LateralMenu() {
-  const [showSubMenu, setShowSubMenu] = useState(false);
+export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
   const currentPath = usePathname();
-  const menuItems = [
-    {
-      href: "/home/general",
-      icon: "/icons/home.png",
-      submenu: [
-        { href: "/general/opcion1", title: "Opción 1" },
-        { href: "/general/opcion2", title: "Opción 2" },
-      ],
-    },
-    {
-      href: "/",
-      icon: "/icons/location.png",
-    },
-    {
-      href: "/registro",
-      icon: "/icons/contacts.png",
-    },
-    {
-      href: "/registro",
-      icon: "/icons/qa.png",
-    },
-  ];
+  const [showSubMenu, setShowSubMenu] = useState<boolean>(
+    currentPath.includes("/home")
+  );
 
   const handleSubmenu = () => {
     setShowSubMenu(!showSubMenu);
@@ -52,10 +33,14 @@ export default function LateralMenu() {
         </Link>
         <nav>
           <ul>
-            {menuItems.map(({ href, icon, submenu }) => (
+            {menuItems.map(({ href, icon, submenu }, index) => (
               <li
-                key={href}
-                className={href === currentPath ? styles.active : ""}
+                key={index}
+                className={
+                  href === currentPath || currentPath.includes(href)
+                    ? styles.active
+                    : ""
+                }
               >
                 {submenu ? (
                   <div className={styles.submenu} onClick={handleSubmenu}>
@@ -66,25 +51,47 @@ export default function LateralMenu() {
                       alt="Logo UPB"
                       priority={true}
                     />
+                    <div className={styles.dropDown}>
+                      <Image
+                        src={"/icons/drop-down.png"}
+                        width={50}
+                        height={50}
+                        alt="Logo UPB"
+                        priority={true}
+                        className={`drop-down
+                        ${showSubMenu && " open"}`}
+                      />
+                    </div>
                     {showSubMenu && (
-                      <ul >
+                      <ul>
                         {submenu.map(({ href, title }) => (
-                          <li key={title}>
-                            <Link href={href}>{title}</Link>
-                          </li>
+                          <Link key={title} href={href}>
+                            <li
+                              className={
+                                href === currentPath ||
+                                currentPath.includes(href)
+                                  ? styles.selected
+                                  : ""
+                              }
+                            >
+                              <span>{title}</span>
+                            </li>
+                          </Link>
                         ))}
                       </ul>
                     )}
                   </div>
                 ) : (
                   <Link href={href}>
-                    <Image
-                      src={icon}
-                      width={50}
-                      height={50}
-                      alt="Logo UPB"
-                      priority={true}
-                    />
+                    <div className={styles.option}>
+                      <Image
+                        src={icon}
+                        width={50}
+                        height={50}
+                        alt="Logo UPB"
+                        priority={true}
+                      />
+                    </div>
                   </Link>
                 )}
               </li>

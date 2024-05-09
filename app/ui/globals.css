@@ -1,5 +1,5 @@
 :root {
-  ---darkBlue: #00031c;
+  --darkBlue: #00031c;
   --mediumBlue: #000938;
   --lightGray: rgba(0, 0, 0, 0.22);
   --primary: #f35151;
@@ -14,7 +14,7 @@ body {
   font-family: var(--font);
 }
 
-.auth-section{
+.auth-section {
   background-color: var(--mediumBlue);
   width: 100vw;
   height: auto;
@@ -27,7 +27,7 @@ body {
 }
 
 .home-section {
-  background-color: var(---darkBlue);
+  background-color: var(--darkBlue);
   width: 100vw;
   height: auto;
   min-height: 100vh;
@@ -36,7 +36,7 @@ body {
 }
 
 .auth-container {
-  background-color: var(---darkBlue);
+  background-color: var(--darkBlue);
   width: 85%;
   max-width: 470px;
   height: auto;
@@ -48,6 +48,22 @@ body {
   gap: 1rem;
   border-radius: 30px;
   margin: 2rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.drop-down {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-90deg);
+  transition: 0.3s ease-out;
+}
+
+.drop-down.open {
+  transition: 0.3s ease-in;
+  transform: rotate(0deg);
 }
 
 @media screen and (max-width: 720px) {

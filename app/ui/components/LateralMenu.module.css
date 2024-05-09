@@ -1,54 +1,81 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25vw;
-    max-width: 250px;
-    height: 100vh;
-    position: fixed;
-    background: var(--mediumBlue);
-    border-radius: 0 0 80px 0;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  max-width: 250px;
+  height: 100vh;
+  position: fixed;
+  background: var(--mediumBlue);
+  border-radius: 0 0 80px 0;
+  gap: 2rem;
 }
 
 .container li {
-    width: 100%;
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .container nav {
-    width: 100%;
-
+  width: calc(100% - 2px);
 }
 
 .container ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container img {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
-.active{
-    background: linear-gradient(to right, var(--primary), var(--secondary)) !important;
+.active {
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary)
+  ) !important;
 }
 
-.submenu  {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.submenu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .submenu ul {
-    width: 100%;
+  width: 100%;
 }
 
 .submenu li {
-    padding: 10px 0;
-    background-color: var(--mediumBlue);
+  padding: 10px 0;
+  background-color: var(--mediumBlue);
+}
+
+.submenu span {
+  color: white;
+  text-decoration: none;
+}
+
+.selected {
+  background-color: var(--darkBlue) !important;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropDown {
+  position: absolute;
+  top: 15px;
+  right: 10px;
 }
