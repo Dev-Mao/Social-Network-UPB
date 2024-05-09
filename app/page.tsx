@@ -7,9 +7,9 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Inicio de sesión</title>
       </Head>
-      <Layout title="Login" description="Inicio de sesión">
+      <Layout>
        <LoginComponent/>
       </Layout>
     </>

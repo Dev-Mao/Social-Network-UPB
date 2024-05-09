@@ -7,9 +7,9 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Registro</title>
       </Head>
-      <Layout title="Registro" description="Registro de usuario">
+      <Layout>
        <SignupComponent/>
       </Layout>
     </>

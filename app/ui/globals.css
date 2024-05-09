@@ -14,7 +14,7 @@ body {
   font-family: var(--font);
 }
 
-.auth-section {
+.auth-section{
   background-color: var(--mediumBlue);
   width: 100vw;
   height: auto;
@@ -22,6 +22,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.home-section {
+  background-color: var(---darkBlue);
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
