@@ -44,6 +44,49 @@
   cursor: pointer;
 }
 
+.searchMobile {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 165px);
+  top: 84px;
+  backdrop-filter: blur(5px);
+  margin-top: 10px;
+}
+
+.popUp{
+  background-color: var(--darkBlue);
+  border: 2px solid white;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.popUp input{
+  width: 80%;
+  padding: 10px 20px;
+}
+
+.popUp button{
+  width:50%;
+  color: white;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.triangle {
+  position: absolute;
+  z-index: 1;
+  top: 45px;
+  right: 0;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     position: fixed;
@@ -58,6 +101,6 @@
   }
 
   .icons {
-    gap: 0;
+    gap: 5px;
   }
 }

@@ -66,6 +66,21 @@ a {
   transform: rotate(0deg);
 }
 
+button{
+  border-radius: 50px;
+  padding: 7px 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--darkBlue);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
 @media screen and (max-width: 768px) {
   .auth-container {
     border-radius: 60px;
