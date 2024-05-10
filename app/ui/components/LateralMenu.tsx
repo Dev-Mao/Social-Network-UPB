@@ -37,7 +37,9 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
               <li
                 key={index}
                 className={
-                  href === currentPath || currentPath.includes(href)
+                  href === currentPath ||
+                  currentPath.includes(href) ||(
+                  href.includes("/home") && currentPath.includes("/home"))
                     ? styles.active
                     : ""
                 }
@@ -65,13 +67,14 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
                     {showSubMenu && (
                       <ul>
                         {submenu.map(({ href, title }) => (
-                          <Link key={title} href={href} onClick={(e) => e.stopPropagation()}>
+                          <Link
+                            key={title}
+                            href={href}
+                            onClick={(e) => e.stopPropagation()}
+                          >
                             <li
                               className={
-                                href === currentPath ||
-                                currentPath.includes('/home')
-                                  ? styles.selected
-                                  : ""
+                                href === currentPath ? styles.selected : ""
                               }
                             >
                               <span>{title}</span>
