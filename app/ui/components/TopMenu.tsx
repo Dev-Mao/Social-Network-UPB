@@ -4,7 +4,6 @@ import Image from "next/image";
 import styles from "./TopMenu.module.css";
 import Link from "next/link";
 import { useState } from "react";
-import { limit } from "firebase/firestore";
 
 export default function TopMenu({ windowWidth }: { windowWidth: number }) {
   const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
