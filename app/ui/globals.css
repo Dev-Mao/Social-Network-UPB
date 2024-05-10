@@ -85,4 +85,10 @@ button{
   .auth-container {
     border-radius: 60px;
   }
+  
+  .icon-create-post-mobile{
+    position: fixed;
+    bottom: 90px;
+    right: 40px;
+}
 }

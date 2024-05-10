@@ -46,37 +46,77 @@
 
 .searchMobile {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 165px);
   top: 84px;
   backdrop-filter: blur(5px);
   margin-top: 10px;
 }
 
-.popUp{
+.notifications {
+  position: absolute;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  top: 84px;
+  left: -260px;
+  backdrop-filter: blur(5px);
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notifications li {
+  width: calc(100% - 30px);
+  border: 1px solid white;
+  font-size: 1.4rem;
+  color: white;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popUp {
   background-color: var(--darkBlue);
   border: 2px solid white;
-  width: calc(100% - 40px);
-  margin: 0 20px;
+  width: 500px;
+  margin: 0;
+  height: fit-content;
+  margin-right: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px 0;
+  padding: 0;
 }
 
-.popUp input{
+.popUp ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  height: fit-content;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  scrollbar-width: none;
+}
+
+.popUp ul::-webkit-scrollbar {
+  display: none; 
+}
+
+.popUp input {
   width: 80%;
   padding: 10px 20px;
 }
 
-.popUp button{
-  width:50%;
+.popUp button {
+  width: 50%;
   color: white;
 }
 
-.searchContainer {
+.popUpContainer {
   position: relative;
 }
 
@@ -84,7 +124,18 @@
   position: absolute;
   z-index: 1;
   top: 45px;
+  right: -5px;
+}
+
+.circle {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  top: 0;
   right: 0;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  z-index: 4;
 }
 
 @media screen and (max-width: 768px) {
@@ -102,5 +153,22 @@
 
   .icons {
     gap: 5px;
+  }
+
+  .notifications {
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 165px);
+    left: 0;
+  }
+
+  .popUp {
+    width: calc(100% - 40px);
+    gap: 20px;
+    margin: 0 20px;
+  }
+
+  .popUp ul {
+    max-height: calc(100vh - 185px);
   }
 }

@@ -4,6 +4,7 @@ import LateralMenu from "../ui/components/LateralMenu";
 import MobileMenu from "../ui/components/MobileMenu";
 import { MenuItem } from "../types";
 import TopMenu from "../ui/components/TopMenu";
+import Image from "next/image";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -47,12 +48,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     windowWidth > 0 && (
       <div className="home-section">
-        {windowWidth <= 780 ? (
-          <MobileMenu menuItems={menuItems} />
+        {windowWidth <= 768 ? (
+          <>
+            <MobileMenu menuItems={menuItems} />
+              <Image
+                src={"/icons/posts-color.png"}
+                width={80}
+                height={80}
+                alt="Ícono crear post"
+                priority={true}
+                className="icon-create-post-mobile"
+              />              
+          </>
         ) : (
           <LateralMenu menuItems={menuItems} />
         )}
-        <TopMenu windowWidth = {windowWidth}/>
+        <TopMenu windowWidth={windowWidth} />
         {children}
       </div>
     )
