@@ -2,14 +2,14 @@ import React from "react";
 import Layout from "../layout";
 import Head from "next/head";
 
-export default function General() {
+export default function Buitreos() {
   return (
     <>
       <Head>
-        <title>General</title>
+        <title>Buitreos</title>
       </Head>
       <Layout>
-        <div style={{color: 'white', margin: '300px'}}>General</div>
+        <div style={{color: 'white', margin: '300px'}}>Buitreos</div>
       </Layout>
     </>
   );

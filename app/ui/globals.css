@@ -66,7 +66,7 @@ a {
   transform: rotate(0deg);
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .auth-container {
     border-radius: 60px;
   }

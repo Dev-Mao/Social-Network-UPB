@@ -48,7 +48,7 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
                       src={icon}
                       width={50}
                       height={50}
-                      alt="Logo UPB"
+                      alt="Ícono menú"
                       priority={true}
                     />
                     <div className={styles.dropDown}>
@@ -56,7 +56,7 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
                         src={"/icons/drop-down.png"}
                         width={50}
                         height={50}
-                        alt="Logo UPB"
+                        alt="Ícono drop down"
                         priority={true}
                         className={`drop-down
                         ${showSubMenu && " open"}`}
@@ -65,11 +65,11 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
                     {showSubMenu && (
                       <ul>
                         {submenu.map(({ href, title }) => (
-                          <Link key={title} href={href}>
+                          <Link key={title} href={href} onClick={(e) => e.stopPropagation()}>
                             <li
                               className={
                                 href === currentPath ||
-                                currentPath.includes(href)
+                                currentPath.includes('/home')
                                   ? styles.selected
                                   : ""
                               }
@@ -88,7 +88,7 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
                         src={icon}
                         width={50}
                         height={50}
-                        alt="Logo UPB"
+                        alt="Ícono Menú"
                         priority={true}
                       />
                     </div>

@@ -17,7 +17,7 @@ export default function MobileMenu({ menuItems }: { menuItems: MenuItem[] }) {
             <li
               key={index}
               className={
-                href === currentPath || currentPath.includes(href)
+                href === currentPath || currentPath.includes(href) || (href.includes('home') && currentPath.includes('/home'))
                   ? styles.active
                   : ""
               }
@@ -28,12 +28,12 @@ export default function MobileMenu({ menuItems }: { menuItems: MenuItem[] }) {
                     src={icon}
                     width={40}
                     height={40}
-                    alt="Logo UPB"
+                    alt="Ícono Menú"
                     priority={true}
                   />
                 </div>
               </Link>
-              {submenu && (
+              {submenu && currentPath.includes("/home")  &&(
                 <nav className={styles.submenu}>
                   <ul>
                     {submenu.map(({ href, title }) => (

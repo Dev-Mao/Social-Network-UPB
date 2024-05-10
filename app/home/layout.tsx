@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import LateralMenu from "../ui/components/LateralMenu";
 import MobileMenu from "../ui/components/MobileMenu";
 import { MenuItem } from "../types";
+import TopMenu from "../ui/components/TopMenu";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -14,19 +15,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       submenu: [
         { href: "/home/general", title: "General" },
         { href: "/home/quejas", title: "Quejas" },
-        { href: "/home/buitreo", title: "Buitreo" },
+        { href: "/home/buitreos", title: "Buitreos" },
       ],
     },
     {
-      href: "/location",
+      href: "/ubicacion",
       icon: "/icons/location.png",
     },
     {
-      href: "/contacts",
+      href: "/contactos",
       icon: "/icons/contacts.png",
     },
     {
-      href: "/qa",
+      href: "/preguntas",
       icon: "/icons/qa.png",
     },
   ];
@@ -44,13 +45,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="home-section">
-      {windowWidth <= 780 ? (
-        <MobileMenu menuItems={menuItems} />
-      ) : (
-        <LateralMenu menuItems={menuItems} />
-      )}
-      {children}
-    </div>
+    windowWidth > 0 && (
+      <div className="home-section">
+        {windowWidth <= 780 ? (
+          <MobileMenu menuItems={menuItems} />
+        ) : (
+          <LateralMenu menuItems={menuItems} />
+        )}
+        <TopMenu windowWidth = {windowWidth}/>
+        {children}
+      </div>
+    )
   );
 }
