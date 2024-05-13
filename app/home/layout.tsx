@@ -5,9 +5,11 @@ import MobileMenu from "../ui/components/MobileMenu";
 import { MenuItem } from "../types";
 import TopMenu from "../ui/components/TopMenu";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const currentPath = usePathname();
 
   const menuItems: MenuItem[] = [
     {
@@ -51,6 +53,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {windowWidth <= 768 ? (
           <>
             <MobileMenu menuItems={menuItems} />
+            {currentPath.includes("/home") && (
               <Image
                 src={"/icons/posts-color.png"}
                 width={80}
@@ -58,7 +61,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 alt="Ícono crear post"
                 priority={true}
                 className="icon-create-post-mobile"
-              />              
+              />
+            )}
           </>
         ) : (
           <LateralMenu menuItems={menuItems} />

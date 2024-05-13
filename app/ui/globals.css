@@ -66,7 +66,7 @@ a {
   transform: rotate(0deg);
 }
 
-button{
+button {
   border-radius: 50px;
   padding: 7px 0;
   font-weight: bold;
@@ -81,14 +81,30 @@ button{
   font-family: var(--font);
 }
 
+.map-container {
+  position: absolute;
+  z-index: 0;
+  margin-top: 85px;
+  margin-left: 261px;
+  width: calc(100vw - 261px);
+  height: calc(100vh - 85px);
+}
+
 @media screen and (max-width: 768px) {
   .auth-container {
     border-radius: 60px;
   }
-  
-  .icon-create-post-mobile{
+
+  .icon-create-post-mobile {
     position: fixed;
     bottom: 90px;
     right: 40px;
-}
+  }
+
+  .map-container {
+    margin-top: 85px;
+    margin-left: 0;
+    width: 100vw;
+    height: calc(100vh - 155px);
+  }
 }
