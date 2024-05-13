@@ -3,6 +3,7 @@
   bottom: 0;
   overflow: hidden;
   width: 100vw;
+  z-index: 1000;
 }
 
 .menu ul {
