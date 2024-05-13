@@ -1,7 +1,7 @@
 "use client";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-const libraries = ["places"];
+const libraries: any[] = ["places"];
 const mapContainerStyle = {
   width: "100%",
   height: "100%",
@@ -9,7 +9,7 @@ const mapContainerStyle = {
 
 function App() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY || '',
     libraries,
   });
 
