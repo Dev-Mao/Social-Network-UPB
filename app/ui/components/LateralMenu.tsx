@@ -56,8 +56,8 @@ export default function LateralMenu({ menuItems }: { menuItems: MenuItem[] }) {
                     <div className={styles.dropDown}>
                       <Image
                         src={"/icons/drop-down.png"}
-                        width={50}
-                        height={50}
+                        width={20}
+                        height={20}
                         alt="Ícono drop down"
                         priority={true}
                         className={`drop-down

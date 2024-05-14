@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../home/layout";
 import Head from "next/head";
+import QuestionsList from "../ui/components/Questions";
 
 export default function Qa() {
   return (
@@ -9,7 +10,7 @@ export default function Qa() {
         <title>Preguntas</title>
       </Head>
       <Layout>
-        <div style={{color: 'white', margin: '300px'}}>Preguntas</div>
+        <QuestionsList/>
       </Layout>
     </>
   );
