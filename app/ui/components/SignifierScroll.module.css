@@ -1,0 +1,14 @@
+@media screen and (min-width: 769px) {
+  .scrollIndicator {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scrollIndicator {
+    position: fixed;
+    bottom: 90px;
+    right: calc(50vw - 35px);
+    display: none;
+  }
+}

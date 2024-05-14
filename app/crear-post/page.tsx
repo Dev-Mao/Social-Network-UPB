@@ -1,16 +1,16 @@
 import React from "react";
 import Layout from "../home/layout";
 import Head from "next/head";
-import ContactsList from "../ui/components/Contacts";
+import CreatePostComponent from "../ui/components/CreatePost";
 
-export default function Contacts() {
+export default function CreatePost() {
   return (
     <>
       <Head>
-        <title>Contactos</title>
+        <title>Crear post</title>
       </Head>
       <Layout>
-        <ContactsList/>
+        <CreatePostComponent />
       </Layout>
     </>
   );

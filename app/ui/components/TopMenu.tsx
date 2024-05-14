@@ -41,7 +41,7 @@ export default function TopMenu({ windowWidth }: { windowWidth: number }) {
     );
     setNotifications(updatedNotifications);
   };
-  
+
   return (
     <div className={styles.container}>
       {windowWidth <= 768 && (
@@ -95,13 +95,15 @@ export default function TopMenu({ windowWidth }: { windowWidth: number }) {
           </div>
         )}
         {windowWidth > 768 && (
-          <Image
-            src={"/icons/posts.png"}
-            width={40}
-            height={40}
-            alt="Ícono Posts"
-            priority={true}
-          />
+          <Link href={"/crear-post"}>
+            <Image
+              src={"/icons/posts.png"}
+              width={40}
+              height={40}
+              alt="Ícono Posts"
+              priority={true}
+            />
+          </Link>
         )}
         <Image
           src={"/icons/message.png"}

@@ -10,8 +10,8 @@
 html,
 body {
   margin: 0;
-  overflow: hidden;
   font-family: var(--font);
+  overflow-x: hidden;
 }
 
 .auth-section {
@@ -96,7 +96,7 @@ button {
   .icon-create-post-mobile {
     position: fixed;
     bottom: 90px;
-    right: 40px;
+    right: 30px;
   }
 
   .map-container {

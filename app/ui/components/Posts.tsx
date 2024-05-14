@@ -1,43 +1,13 @@
-"use client";
-
 import React from "react";
 import styles from "./Posts.module.css";
 import { Post } from "../../types";
 import Image from "next/image";
-import { useEffect } from "react";
+import SignifierScroll from "./SignifierScroll";
 
 export default function Posts({ posts }: { posts: Post[] }) {
-  const scrollHandler = () => {
-    const container = document.getElementById("container-posts");
-    const scrollIcon = document.getElementById("scroll-indicator");
-    if (
-      container &&
-      scrollIcon &&
-      container.scrollHeight > container.clientHeight
-    ) {
-      scrollIcon.style.display = "block";
-    } else if (scrollIcon) {
-      scrollIcon.style.display = "none";
-    }
-    if (
-      container &&
-      scrollIcon &&
-      (Math.ceil(container.scrollHeight - container.scrollTop) ===
-        container.clientHeight ||
-        Math.floor(container.scrollHeight - container.scrollTop) ===
-          container.clientHeight)
-    ) {
-      scrollIcon.style.display = "none";
-    }
-  };
-
-  useEffect(() => {
-    scrollHandler();
-  }, []);
-
   return (
     <section className={styles.container}>
-      <ul id="container-posts" onScroll={() => scrollHandler()}>
+      <ul id="container-posts">
         {posts.map(
           ({ title, author, content, likes, shares, images }, index) => (
             <li key={index}>
@@ -89,15 +59,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
           )
         )}
       </ul>
-      <Image
-        src={"/icons/scroll.png"}
-        width={70}
-        height={70}
-        alt="Ícono scroll"
-        priority={true}
-        id="scroll-indicator"
-        className={styles.scrollIndicator}
-      />
+      <SignifierScroll containerId="container-posts"/>
     </section>
   );
 }
