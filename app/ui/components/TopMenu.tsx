@@ -120,7 +120,7 @@ export default function TopMenu({
             />
           </Link>
         )}
-        <Link href={"/contacts"}>
+        <Link href={"/contactos"}>
           <Image
             src={"/icons/message.png"}
             width={40}
