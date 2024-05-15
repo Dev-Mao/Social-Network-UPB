@@ -4,10 +4,18 @@ import Image from "next/image";
 import styles from "./TopMenu.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
-export default function TopMenu({ windowWidth }: { windowWidth: number }) {
+export default function TopMenu({
+  windowWidth,
+  placeholder,
+}: {
+  windowWidth: number;
+  placeholder?: string;
+}) {
   const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
   const [showNotifications, setShowNotifications] = useState<boolean>(false);
+  const currentPath = usePathname();
 
   const allNotifications = [
     "Notificación 1",
@@ -43,7 +51,17 @@ export default function TopMenu({ windowWidth }: { windowWidth: number }) {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        justifyContent:
+          windowWidth >= 768
+            ? placeholder
+              ? "space-between"
+              : "end"
+            : "space-between",
+      }}
+    >
       {windowWidth <= 768 && (
         <Link href={"/home/general"}>
           <Image
@@ -55,12 +73,9 @@ export default function TopMenu({ windowWidth }: { windowWidth: number }) {
           />
         </Link>
       )}
-      {windowWidth > 520 && (
+      {windowWidth > 520 && placeholder && (
         <div className={styles.searchBar}>
-          <input
-            type="text"
-            placeholder="Buscar post por título o palabra clave"
-          />
+          <input type="text" placeholder={placeholder} />
           <Image
             src={"/icons/search.png"}
             width={30}
@@ -72,7 +87,7 @@ export default function TopMenu({ windowWidth }: { windowWidth: number }) {
         </div>
       )}
       <div className={styles.icons}>
-        {windowWidth <= 520 && (
+        {windowWidth <= 520 && placeholder && (
           <div className={styles.popUpContainer}>
             <Image
               src={"/icons/search-white.png"}
@@ -133,32 +148,25 @@ export default function TopMenu({ windowWidth }: { windowWidth: number }) {
           )}
           {notifications.length > 0 && <div className={styles.circle}> </div>}
         </div>
-        <Image
-          src={"/icons/profile.png"}
-          width={40}
-          height={40}
-          alt="Ícono Perfil"
-          priority={true}
-        />
+        <Link href={"/perfil"}>
+          {" "}
+          <Image
+            src={
+              currentPath.includes("/perfil")
+                ? "/icons/profile-colors.png"
+                : "/icons/profile.png"
+            }
+            width={40}
+            height={40}
+            alt="Ícono Perfil"
+            priority={true}
+          />
+        </Link>
       </div>
-      {windowWidth <= 520 && showSearchBar && (
+      {windowWidth <= 520 && showSearchBar && placeholder && (
         <div className={styles.searchMobile}>
           <div className={styles.popUp}>
-            <input
-              type="text"
-              placeholder="Buscar post por título o palabra clave"
-            />
-            <button>Buscar</button>
-          </div>
-        </div>
-      )}
-      {windowWidth <= 520 && showSearchBar && (
-        <div className={styles.searchMobile}>
-          <div className={styles.popUp}>
-            <input
-              type="text"
-              placeholder="Buscar post por título o palabra clave"
-            />
+            <input type="text" placeholder={placeholder} />
             <button>Buscar</button>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default function Contacts() {
       <Head>
         <title>Contactos</title>
       </Head>
-      <Layout>
+      <Layout placeholder="Buscar contacto por nombre o carrera">
         <ContactsList/>
       </Layout>
     </>

@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import SignifierScroll from "./SignifierScroll";
-import styles from './Contacts.module.css'
+import styles from "./Contacts.module.css";
+import Link from "next/link";
 
 export default function ContactsList() {
   const contacts = [
@@ -43,13 +44,15 @@ export default function ContactsList() {
               <h3>{name}</h3>
               <span>{career}</span>
             </div>
-            <Image
-              src={"/icons/message.png"}
-              width={35}
-              height={35}
-              alt="Ícono de mensajes"
-              priority={true}
-            />
+            <Link href={`/contactos/${name}`}>
+              <Image
+                src={"/icons/message.png"}
+                width={35}
+                height={35}
+                alt="Ícono de mensajes"
+                priority={true}
+              />
+            </Link>
           </li>
         ))}
       </ul>

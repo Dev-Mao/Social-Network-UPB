@@ -1,0 +1,105 @@
+.container {
+  width: calc(100vw - 260px);
+  height: calc(100vh - 85px);
+  overflow: hidden;
+  margin-left: 260px;
+  margin-top: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat {
+  width: 90%;
+  background-color: var(--mediumBlue);
+  height: 95%;
+  max-width: 550px;
+  border-radius: 30px;
+  display: grid;
+  grid-template-rows: 10% 75% 15%;
+  grid-template-columns: 100%;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  height: 100%;
+}
+
+.info h3 {
+  font-size: 1.6rem;
+  color: white;
+  margin: 5px;
+  max-width: 60%;
+  text-wrap: wrap;
+  text-align: center;
+}
+
+.newMessage {
+  width: calc(100% - 40px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.newMessage input {
+  border-radius: 50px;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: var(--font);
+  width: calc(100% - 90px);
+}
+
+.newMessage input::placeholder {
+  color: var(--lightGray);
+}
+
+.sendedMessages {
+  width: 100%;
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+  align-self: flex-end;
+  scrollbar-width: none;
+}
+
+.sendedMessages::-webkit-scrollbar {
+  display: none;
+}
+
+.sendedMessage {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.sendedMessage div {
+  width: 50%;
+  margin: 10px 20px 10px 0;
+  padding: 20px;
+  border-radius: 40px 40px 0 40px;
+  background: var(--darkBlue);
+  color: white;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: calc(100vh - 160px);
+    margin-left: 0;
+    margin-top: 80px;
+  }
+}

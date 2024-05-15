@@ -12,8 +12,8 @@ export default function Buitreos() {
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra dui sapien. Fusce at auctor libero. Nunc sit amet ipsum ante. Praesent a ipsum leo. Mauris sollicitudin blandit dolor, sodales scelerisque arcu semper sit amet. Aliquam in sem augue. Donec scelerisque eleifend sem, eget feugiat eros bibendum in. Suspendisse dapibus laoreet magna, a blandit dolor ullamcorper quis. Duis lacinia ut erat ac bibe....",
       likes: 0,
-      shares: 5,      
-      images: ["/img/buitreo.png", "/img/buitreo.png"]
+      shares: 5,
+      images: ["/img/buitreo.png", "/img/buitreo.png"],
     },
     {
       title: "Buitreos 1",
@@ -22,13 +22,14 @@ export default function Buitreos() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra dui sapien. Fusce at auctor libero. Nunc sit amet ipsum ante. Praesent a ipsum leo. Mauris sollicitudin blandit dolor, sodales scelerisque arcu semper sit amet. Aliquam in sem augue. Donec scelerisque eleifend sem, eget feugiat eros bibendum in. Suspendisse dapibus laoreet magna, a blandit dolor ullamcorper quis. Duis lacinia ut erat ac bibe....",
       likes: 0,
       shares: 5,
-    },{
+    },
+    {
       title: "Buitreos 1",
       author: "John Doe",
       likes: 0,
-      shares: 5,            
-      images: ["/img/buitreo.png"]
-    },   
+      shares: 5,
+      images: ["/img/buitreo.png"],
+    },
   ];
 
   return (
@@ -36,7 +37,7 @@ export default function Buitreos() {
       <Head>
         <title>Buitreos</title>
       </Head>
-      <Layout>
+      <Layout placeholder="Buscar post por titulo o palabra clave">
         <Posts posts={posts} />
       </Layout>
     </>

@@ -61,7 +61,7 @@ export default function General() {
       <Head>
         <title>General</title>
       </Head>
-      <Layout>
+      <Layout placeholder="Buscar post por titulo o palabra clave">
         <Posts posts={posts} />
       </Layout>
     </>

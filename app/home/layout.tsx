@@ -8,7 +8,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+  placeholder,
+}: {
+  children: React.ReactNode;
+  placeholder?: string;
+}) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
   const currentPath = usePathname();
 
@@ -55,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <>
             <MobileMenu menuItems={menuItems} />
             {currentPath.includes("/home") && (
-              <Link href={'/crear-post'}>
+              <Link href={"/crear-post"}>
                 <Image
                   src={"/icons/posts-color.png"}
                   width={80}
@@ -70,7 +76,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ) : (
           <LateralMenu menuItems={menuItems} />
         )}
-        <TopMenu windowWidth={windowWidth} />
+        <TopMenu windowWidth={windowWidth} placeholder={placeholder} />
         {children}
       </div>
     )
