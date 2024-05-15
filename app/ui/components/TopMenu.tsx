@@ -120,13 +120,15 @@ export default function TopMenu({
             />
           </Link>
         )}
-        <Image
-          src={"/icons/message.png"}
-          width={40}
-          height={40}
-          alt="Ícono Mensajes"
-          priority={true}
-        />
+        <Link href={"/contacts"}>
+          <Image
+            src={"/icons/message.png"}
+            width={40}
+            height={40}
+            alt="Ícono Mensajes"
+            priority={true}
+          />
+        </Link>
         <div className={styles.popUpContainer}>
           <Image
             src={"/icons/notifications.png"}
