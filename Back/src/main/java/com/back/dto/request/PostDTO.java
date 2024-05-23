@@ -9,10 +9,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterDTO {
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String career;
-    private String password;
+public class PostDTO {
+    private String title;
+    private String content;
+    private String category;
 }

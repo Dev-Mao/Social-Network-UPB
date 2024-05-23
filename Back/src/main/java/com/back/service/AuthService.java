@@ -35,7 +35,6 @@ public class AuthService {
     public AuthDTO register(RegisterDTO registerDTO) {
         User user = User.builder()
                 .email(registerDTO.getEmail())
-                .id(registerDTO.getId())
                 .name(registerDTO.getFirstName() + registerDTO.getLastName())
                 .career(registerDTO.getCareer())
                 .password(passwordEncoder.encode(registerDTO.getPassword()))

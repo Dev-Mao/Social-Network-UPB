@@ -1,18 +1,16 @@
-package com.back.dto.request;
+package com.back.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterDTO {
+@Setter
+@Getter
+public class UserDTO {
     private String email;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String career;
-    private String password;
 }
