@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @Entity
 public class Post {
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user")

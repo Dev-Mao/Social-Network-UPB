@@ -1,0 +1,18 @@
+INSERT INTO user_student (id, email, name, career, password, role) VALUES
+                                                                           (1, 'juan.perez@example.com', 'Juan Perez', 'Ingeniería Informática', '$2a$10$UPhLhkmuXxf7r8roJQfxDuMl32lDNDrr8h2jN8iN0oDy4TZ2BKXla', 'USER'),
+                                                                           (2, 'maria.garcia@example.com', 'Maria Garcia', 'Administración de Empresas', '$2a$10$UPhLhkmuXxf7r8roJQfxDuMl32lDNDrr8h2jN8iN0oDy4TZ2BKXla', 'USER'),
+                                                                           (3, 'carlos.lopez@example.com', 'Carlos Lopez', 'Ingeniería Civil', '$2a$10$UPhLhkmuXxf7r8roJQfxDuMl32lDNDrr8h2jN8iN0oDy4TZ2BKXla', 'USER'),
+                                                                           (4, 'ana.rodriguez@example.com', 'Ana Rodriguez', 'Medicina', '$2a$10$UPhLhkmuXxf7r8roJQfxDuMl32lDNDrr8h2jN8iN0oDy4TZ2BKXla', 'USER'),
+                                                                           (5, 'luis.martinez@example.com', 'Luis Martinez', 'Derecho', '$2a$10$UPhLhkmuXxf7r8roJQfxDuMl32lDNDrr8h2jN8iN0oDy4TZ2BKXla', 'USER');
+
+INSERT INTO post (id, id_user, publication_time, title, content, category) VALUES
+                                                                               (1, 2, '2024-05-23 10:00:00', 'Nueva Funcionalidad en la Plataforma', 'Hemos lanzado una nueva funcionalidad que permite a los usuarios personalizar sus perfiles.', 'general'),
+                                                                               (2, 3, '2024-05-23 11:00:00', 'Problemas con el Servicio al Cliente', 'He intentado contactar con el servicio al cliente y no he recibido respuesta en una semana.', 'quejas'),
+                                                                               (3, 1, '2024-05-23 12:00:00', 'Encuentro en el Parque', 'Hoy vi a una persona muy atractiva en el parque central. ¿Alguien sabe quién es?', 'buitreos'),
+                                                                               (4, 4, '2024-05-23 13:00:00', 'Actualización del Sistema', 'La plataforma se actualizará mañana para mejorar la seguridad y el rendimiento.', 'general'),
+                                                                               (5, 5, '2024-05-23 14:00:00', 'Demora en la Entrega de Productos', 'Llevo esperando mi pedido por más de dos semanas. ¿Alguien más tiene este problema?', 'quejas'),
+                                                                               (6, 2, '2024-05-23 15:00:00', 'Chico del Café', 'Hoy en la cafetería vi a un chico muy guapo con una camiseta azul. ¿Alguien sabe su nombre?', 'buitreos'),
+                                                                               (7, 3, '2024-05-23 16:00:00', 'Mantenimiento Programado', 'Habrá una interrupción del servicio el próximo sábado debido a tareas de mantenimiento.', 'general'),
+                                                                               (8, 1, '2024-05-23 17:00:00', 'Atención al Cliente Deficiente', 'El tiempo de espera para obtener asistencia ha sido extremadamente largo.', 'quejas'),
+                                                                               (9, 4, '2024-05-23 18:00:00', 'Chica del Gimnasio', 'Vi a una chica increíblemente atractiva en el gimnasio esta mañana. ¿Alguien la conoce?', 'buitreos'),
+                                                                               (10, 5, '2024-05-23 19:00:00', 'Nueva Política de Privacidad', 'Se ha actualizado la política de privacidad para reflejar cambios recientes en las regulaciones.', 'general');

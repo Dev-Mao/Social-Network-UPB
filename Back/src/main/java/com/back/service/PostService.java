@@ -46,6 +46,7 @@ public class PostService implements IPostService{
         User user = (User) authentication.getPrincipal();
 
         Post newPost = Post.builder()
+                .id(postRepository.count()+1)
                 .title(postDTO.getTitle())
                 .category(postDTO.getCategory())
                 .content(postDTO.getCategory())

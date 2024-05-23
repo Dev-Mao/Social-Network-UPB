@@ -25,6 +25,6 @@ public class PostController {
     @PostMapping("/new")
     public ResponseEntity<?> newPost(@RequestBody PostDTO postDTO){
         postService.createPost(postDTO);
-        return ResponseEntity.ok("melo");
+        return ResponseEntity.ok("Post creado con exito añañai");
     }
 }
